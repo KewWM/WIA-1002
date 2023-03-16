@@ -1,0 +1,12 @@
+Assume that the following objects were created
+ArrayList<String> vehicle = new ArrayList<>();
+ArrayList<Object> transportation = new ArrayList<>();
+
+Declare a method header for generic method,allTransportation 
+that returns nothing,which accepts two ArrayList parameters using the wildcards.
+
+Ans:
+public static void allATransportation (ArrayList<?> l1, ArrayList<?> l2)
+{
+
+}

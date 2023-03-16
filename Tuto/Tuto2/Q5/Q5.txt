@@ -1,0 +1,4 @@
+Create a generic class named Duo that has two parameters, A and B.
+Declare a variable named first of type A, and the second variable named second of type B.
+Create a constructor that accepts these two parameters.
+In the constructor, assign these parameters respectively to the declared variables.

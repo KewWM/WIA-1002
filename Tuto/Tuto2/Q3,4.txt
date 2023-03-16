@@ -1,0 +1,10 @@
+3. What is a raw type? Why is a raw type unsafe? Why is the raw type allowed in Java?
+Ans: 
+Raw type is a generic class or interface used without specifying a concrete type or without a type parameter.
+Raw type unsafe because it allow mixed type of parameters which leads to runtime errors.
+Raw type is allowed because of the purpose of backward compatibility with pre-Java 5 code and to make it save, generic type is used.
+
+4. What is erasure? Why are Java generics implements using erasure?
+Ans:
+Erasure is the process by which the Java compiler replaces a generic type with its non-generic equivalent at compile time. 
+The reason Java generics are implemented using erasure is to maintain backward compatibility with pre-Java 5 code.

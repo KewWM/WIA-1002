@@ -1,0 +1,15 @@
+Assuming that two new object are created as follows
+ArrayList<Integer> numOfCars = new ArrayList<>();
+ArrayList<Double> milesPerHour = new ArrayList<>();
+
+Using the <?> wildcard, implement a generic method that displays the list.
+
+Ans:
+public static void displayList(ArrayList<?> list) 
+{
+    for (Object obj : list) 
+    {
+        System.out.print(obj + " ");
+    }
+    System.out.println();
+}
