@@ -18,7 +18,8 @@ public class Q2
     
     public static void charSepByComma(String filename)
     {
-        try{
+        try
+        {
             Scanner ya = new Scanner(new FileInputStream(new File(filename)));
             String line = "";
             int numOfChar = 0;
@@ -48,7 +49,6 @@ public class Q2
         {
             Scanner ya = new Scanner(new FileInputStream(new File(filename)));
             String line = "";
-            int numOfChar = 0;
             
             while(ya.hasNextLine())
             {
@@ -61,7 +61,7 @@ public class Q2
                 }
             }
             System.out.println(sb.toString());
-            System.out.println("Number of characters: " + numOfChar + "\n");
+            System.out.println("Number of characters: " + count + "\n");
             
             ya.close();
         }
@@ -76,10 +76,10 @@ public class Q2
         String specialChars = "[,;\\s]+";
         StringBuilder sb = new StringBuilder();
         int count = 0;
-        try{
+        try
+        {
             Scanner ya = new Scanner(new FileInputStream(new File(filename)));
             String line = "";
-            int numOfChar = 0;
             
             while(ya.hasNextLine())
             {
@@ -92,7 +92,7 @@ public class Q2
                 }
             }
             System.out.println(sb.toString());
-            System.out.println("Number of characters: " + numOfChar + "\n");
+            System.out.println("Number of characters: " + count + "\n");
             
             ya.close();
         }

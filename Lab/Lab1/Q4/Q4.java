@@ -15,6 +15,7 @@ public class Q4
         acc.withdraw(4, "2nd withdraw");
         acc.withdraw(3, "3rd withdraw");
         
+        System.out.println(acc.getName() + "\n" + acc.getAnnualInterestRate()*100 + "\n" + acc.getBalance() + "\n");
         for (Transaction transaction : acc.getTransactions()) 
         {
             System.out.println("Date: " + transaction.getDate());

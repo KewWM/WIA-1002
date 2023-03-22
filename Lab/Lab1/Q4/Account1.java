@@ -29,6 +29,15 @@ public class Account1
         this.balance = initialBalance;
         this.dateCreated = new Date();
     }
+
+    public String getName() 
+    {
+        return name;
+    }
+    public void setName(String name) 
+    {
+        this.name = name;
+    }
     
     public int getId() 
     {

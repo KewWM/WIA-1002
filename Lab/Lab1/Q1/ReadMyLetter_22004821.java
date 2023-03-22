@@ -10,7 +10,6 @@ public class ReadMyLetter_22004821
     public static void main(String[] args) 
     {
         System.out.println("Input second part: ");
-        Scanner ya = new Scanner(System.in);
         String str = "";
         try
         {
@@ -25,14 +24,20 @@ public class ReadMyLetter_22004821
         {
             System.out.println("File not found.");
         }
+        
         str += "\n\n\nTuesday, 13 June 2023. \n\n";
+        
+        //Input second part here
         Scanner sc = new Scanner(System.in);
         str += sc.nextLine();
+        
+        //Finally, output all String
         System.out.println(str);
     }
 }
 
 /*
 It’s me again. Finally, it’s the end of the term and the DS class has finished! I think I did
-well in this course.
+well in this course and happy to complete Data Structure successfully. DS lets me learn more
+about programming. My grade becomes A. I think I can do better @_@|||
 */
