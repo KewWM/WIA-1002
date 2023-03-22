@@ -31,17 +31,5 @@ public abstract class Vehicle
     }
 }
 /*
-Yes, for example
-public class Motor extends Vehicle 
-{
-    public Car(double maxSpeed) 
-    {
-        super(maxSpeed);
-    }
-    
-    public void accelerate() 
-    {
-        currentSpeed += 5; 
-    }
-}
+No. It is an abstract class
 */
