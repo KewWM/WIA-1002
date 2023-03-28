@@ -1,0 +1,134 @@
+a)
+Node<Character> node1 = new Node<>('a');
+Node<Character> node2 = new Node<>('z');
+
+Node<Character> head = node1;
+Node<Character> tail = node2;
+
+b)
+head       tail
+node1 -->  node2
+
+c)
+node1.next = node2;
+
+d)
+Node<Character> firstNode = new Node<>('n');
+
+head                    tail
+firstNode --> node1 --> node2
+
+e)
+If the linked-list is empty, the new node becomes the head and the tail.
+If the linked-list is not empty, the new node becomes the head and its next reference points to the old head.
+
+f)
+Start
+    Create firstNode
+    If (firstNode == null)
+        head = tail = firstNode
+        size = 1
+    Else
+        firstNode.next = head
+        head = firstNode
+        size++
+    End If
+Stop
+
+
+g)
+firstNode.next = head;
+head = firstNode;
+
+h)
+(i)addLast() – value of element, c
+Start
+    If (tail == null)
+        head = tail = 'c'
+        size = 1
+    Else
+        tail.next = 'c'
+        tail = tail.next
+        size++
+    End If
+Stop
+
+head                              tail
+firstNode --> node1 --> node2 --> 'c'
+
+(ii)add(int index, E e) – value of element, d
+Start
+    If (tail == null)
+        head = tail = 'd'
+        size = 1
+    Else If (size < 2)
+        addLast('d')
+    Else
+        current = head
+        ITERATE(1) current = current.next
+        temp = current.next
+        current.next = 'd'
+        current.next.next = temp
+        size++
+    End If
+Stop
+
+head                    [2]                tail
+firstNode --> node1 --> 'd' -->  node2 --> 'c'
+
+
+(iii)removeFirst()
+Start
+    If (size == 0)
+        return null
+    Else
+        temp = head
+        head = head.next
+        size--
+        return temp.element
+    End If
+Stop
+
+head                        tail
+node1 --> 'd' -->  node2 --> 'c'
+
+(iv)removeLast()
+Start
+    If (size == 0)
+        return null
+    Else If (size == 1)
+        temp = tail
+        head = tail = null
+        size--
+        return temp.element
+    Else
+        temp = tail
+        current = head
+        ITERATE(size - 2) current = current.next
+        tail = current
+        tail.next = null
+        size--
+        return temp.element
+    End If
+Stop
+
+head              tail
+node1 --> 'd' --> node2
+
+(v)remove(int index) ¨C remove at index 1
+Start
+    If (size == 0)
+        return null
+    Else If (size == 1)
+        removeLast()
+    Else
+        current = head
+        previous = current
+        temp = current.next
+        size--
+        return temp
+    End If
+Stop
+
+head       tail
+node1 -->  node2
