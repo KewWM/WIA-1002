@@ -1,5 +1,5 @@
 
-package Lab4.Q1;
+package Lab4;
 
 public class Node <T>
 {

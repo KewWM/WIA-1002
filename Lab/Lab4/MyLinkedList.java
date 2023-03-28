@@ -1,5 +1,5 @@
 
-package Lab4.Q1;
+package Lab4;
 
 public class MyLinkedList <E>
 {
@@ -268,4 +268,12 @@ public class MyLinkedList <E>
         return size;
     }
     
+    //Q2
+    public E getMiddleValue() 
+    {
+        Node<E> current = this.head;
+        for (int i = 0; i < (this.size + 1) / 2; i++) 
+            current = current.next;
+        return current.element;
+    }
 }

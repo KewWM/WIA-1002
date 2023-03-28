@@ -1,5 +1,5 @@
 
-package Lab4.Q1;
+package Lab4;
 
 public class TestLinkedList 
 {
@@ -29,5 +29,8 @@ public class TestLinkedList
         list.set(3, 'a');
         System.out.print("After replacement: ");
         list.print();
+        
+        //Q2
+        System.out.println("Middle Value: " + list.getMiddleValue());
     }
 }
