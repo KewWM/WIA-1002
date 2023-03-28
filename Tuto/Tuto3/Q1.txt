@@ -1,0 +1,63 @@
+Dispenser
+Instance variable(s):
+- itemName: item name of dispenser
+- itemCount: number of item in dipenser
+- itemPrice: item price
+Method(s):
+- dispense(itemCount): dispenses an argument number of item and return itemPrice * itemCount
+- refill(itemCount): adds an arguement number of item into machine
+UML class diagram:
+┌─────────────────────────────────────┐
+│              Dispenser              │
+├─────────────────────────────────────┤
+│ - itemName: String                  │
+│ - itemCount: int                    │
+│ - itemPrice: double                 │
+├─────────────────────────────────────┤
+│ + dispense(itemCount: int): double  │
+│ + refill(itemCount: int): void      │
+└─────────────────────────────────────┘
+
+Cash Register
+Instance variable(s):
+- cashBal: cash balance in machine
+Method(s):
+- cashPaid(): accepts cash into machine and add to cashBal
+- returnChange(totalPrice): returns change to user and deducts the balance by totalPrice in machine.
+UML class diagram:
+┌──────────────────────────────────────────┐
+│               CashRegister               │
+├──────────────────────────────────────────┤
+│ - cashBalance: double                    │
+├──────────────────────────────────────────┤
+│ + cashPaid(): void                       │
+│ + returnChange(totalPrice: double): void │
+└──────────────────────────────────────────┘
+
+Candy Machine
+Instance variable(s):
+- dispCandies: Dispenser object for "candies"
+- dispChips: Dispenser object for "chips"
+- dispGum: Dispenser object for "gum"
+- dispCookies: Dispenser object for "cookies"
+- cashRegister: Cash Register object
+Method(s):
+- displayItem(): displays items sold by candy machine
+- selectedItem(): returns Dispenser object based on selected item
+- payment(itemCount): calls the cashPaid() method of the Dispenser object based on the item selected and calls the returnChange() method.
+- dispenseItem(itemCount): calls the dispense() method of the Dispenser object based on the item selected.
+UML class diagram:
+┌──────────────────────────────────────┐
+│             CandyMachine             │
+├──────────────────────────────────────┤
+│ - dispCandies: Dispenser             │
+│ - dispChips: Dispenser               │
+│ - dispGum: Dispenser                 │
+│ - dispCookies: Dispenser             │
+│ - cashRegister: CashRegister         │
+├──────────────────────────────────────┤
+│ + displayItem(): void                │
+│ + selectedItem(): Dispenser          │
+│ + payment(itemCount: int): void      │
+│ + dispenseItem(itemCount: int): void │
+└──────────────────────────────────────┘
