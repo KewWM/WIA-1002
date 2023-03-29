@@ -22,31 +22,4 @@ public class FindMax
         return list[list.length-1];
     }
     
-    static class Circle implements Comparable <Circle>
-    {
-        double radius;
-
-        public Circle(double radius) 
-        {
-            this.radius = radius;
-        }
-        
-        @Override
-        public int compareTo(Circle o)
-        {
-            if (this.radius > o.radius)
-                return 1;
-            else if (this.radius < o.radius)
-                return -1;
-            else
-                return 0;
-        }
-
-        @Override
-        public String toString() {
-            return "Circle with radius " + radius;
-        }
-        
-        
-    }
 }

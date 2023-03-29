@@ -66,6 +66,7 @@ public class StorePairGeneric <T extends Comparable<T>> implements Comparable<St
     @Override
     public boolean equals(Object o)
     {
+        //Not necessary
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass()) 

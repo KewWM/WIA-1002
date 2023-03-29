@@ -16,7 +16,7 @@ public class Q4
     {
         T min = input[0];
         T max = input[0];
-        for (int i = 0; i < input.length; i++)
+        for (int i = 1; i < input.length; i++)
         {
             if (input[i].compareTo(min) < 0)
                 min = input[i];
