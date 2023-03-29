@@ -15,6 +15,7 @@ public class MyArray
     {
         for (T[] array : input) 
         {
+  
             for (T item : array) 
             {
                 System.out.print(item + " ");

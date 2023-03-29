@@ -10,3 +10,13 @@ public static void allATransportation (ArrayList<?> l1, ArrayList<?> l2)
 {
 
 }
+OR
+public static void allATransportation (ArrayList<?> l1, ArrayList<? super T> l2)
+{
+
+}
+OR
+public static void allATransportation (ArrayList<? extends T> l1, ArrayList<?> l2)
+{
+
+}
