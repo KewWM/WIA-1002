@@ -1,0 +1,60 @@
+else
+    {
+        Node<E> temp = head;
+        for(int i=0; i<index; i++)
+        {
+            temp = temp.next;
+        }
+        element = temp.element;
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
+        temp.next = null;
+        temp.prev = null;
+        size --;
+    }
+
+a)
+This is a method to delete an intermediate node
+At line 2, we copy the head to the temp node, at line 3 to line 5 we traverse the node to the index index, 
+at line 6 we copy the element in the node of index index to element, 
+then at line 7 to line 10 we link the previous node and next node of the node of index index together 
+and then disconnect the node at index index to both nodes. 
+Then finally at line 11 we reduce the size property of our doubly linked list after the removal of the node.
+
+b)
+line 7 & 8
+              ┌─────────────────────┐
+head:         V       index:        │       tail:
+┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐
+│ prev │<──│ prev │<──│ prev │<──│ prev │<──│ prev │
+├──────┤   ├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ el 0 │...│ el 1 │   │ el 2 │   │ el 3 │...│ el 4 │
+├──────┤   ├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ next │──>│ next │──>│ next │──>│ next │──>│ next │
+└──────┘   └──────┘   └──────┘   └──────┘   └──────┘
+              │                     A
+              └─────────────────────┘
+
+line 9 & 10
+              ┌─────────────────────┐
+head:         V       index:        │       tail:
+┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐
+│ prev │<──│ prev │   │ prev │   │ prev │<──│ prev │
+├──────┤   ├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ el 0 │...│ el 1 │   │ el 2 │   │ el 3 │...│ el 4 │
+├──────┤   ├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ next │──>│ next │   │ next │   │ next │──>│ next │
+└──────┘   └──────┘   └──────┘   └──────┘   └──────┘
+              │                     A
+              └─────────────────────┘
+
+finally
+
+head:                            tail:
+┌──────┐   ┌──────┐   ┌──────┐   ┌──────┐
+│ prev │<──│ prev │<──│ prev │<──│ prev │
+├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ el 0 │...│ el 1 │   │ el 3 │...│ el 4 │
+├──────┤   ├──────┤   ├──────┤   ├──────┤
+│ next │──>│ next │──>│ next │──>│ next │
+└──────┘   └──────┘   └──────┘   └──────┘

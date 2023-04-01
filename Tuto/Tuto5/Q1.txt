@@ -1,0 +1,61 @@
+public E xyz(int index,E e)
+    {
+        Node<E> current=head;
+        Node<E> temp;
+        if(index<0) return null;
+        else if(index>=size-1) 
+        {
+            this.addLast(e);
+            return null;
+        }
+        else if(index==0) 
+        {
+            temp=head;
+            head.element=e;
+            return temp.element;
+        }
+        else
+        {
+            for (int i = 1; i < index; i++) 
+            {
+                current=current.next;
+            }
+            temp=current.next;
+            current.next.element=e;
+            return temp.element;
+        }
+    }
+
+a)
+Line 10 to Line 21 adds the element e of generic type E into the linked list at the index of index.
+Line 10 to 14 adds e to the first index of the linked list, 
+whereas line 14 to line 21 adds e to any index position in the linked list.
+
+b)
+to insert a node of element e into the index index of the linked list.
+
+c)
+public void xyz(int index, E e) 
+{
+
+    if(index < 0) 
+        return new IndexOutOfBoundException();
+    if(index >= size - 1) 
+        return this.addLast(e);
+
+    Node<E> current = head;
+    Node<E> temp = new Node<>(e);
+
+    if(index == 0) 
+    {
+        temp.next = head;
+        head = temp;
+    } 
+    else 
+    {
+        for (int i = 0; i < index - 1; i++) 
+            current = current.next; // Traverse nodes
+        temp.next = current.next;
+        current.next = temp;
+    }
+}
