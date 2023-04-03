@@ -1,0 +1,14 @@
+Convert the following infix expressions to postfix:
+
+a) a + b * c
+Ans:
+b c * a +
+
+b) a * b – c/d
+Ans:
+a b * c d / -
+
+c) a + (b*c + d)/e
+Ans:
+b c * d + e / a + @
+a b c * d + e / +

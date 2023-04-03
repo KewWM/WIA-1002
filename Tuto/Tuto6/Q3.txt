@@ -1,0 +1,31 @@
+Over time, the elements 1, 2, and 3 are pushed onto a stack in that order. 
+For each of the following, indicate (yes or no) whether the sequence could be created by popping operations. 
+If yes, list the sequence of push() and pop() operations that produces the sequence.
+
+a) 1-2-3
+Ans: YES
+stack2.push(stack.pop());
+stack2.push(stack.pop());
+stack.pop();
+stack2.pop();
+stack2.pop();
+
+b) 2-3-1
+Ans: YES
+stack2.push(stack.pop());
+stack.pop();
+stack2.pop();
+stack.pop();
+
+c) 3-2-1
+Ans: YES
+stack.pop();
+stack.pop();
+stack.pop();
+
+d) 1-3-2
+Ans: YES
+stack2.push(stack.pop());
+stack.pop();
+stack.pop();
+stack2.pop();

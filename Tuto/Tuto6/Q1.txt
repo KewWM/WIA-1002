@@ -1,0 +1,3 @@
+The stack method that returns an element from the stack without removing it is _________.
+Ans:
+c) peek
