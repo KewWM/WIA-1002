@@ -3,34 +3,33 @@ package Lab3.Q5;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Random;
 
 public class ArrayBag <T> implements BagInterface<T>
 {
     private int DEFAULT_CAPACITY = 25;
     private T[] bag = (T[]) new Object[DEFAULT_CAPACITY];
     private int numberOfEntries;
-
-@Override
+    
+    @Override
     public int getCurrentSize() 
     {
         return numberOfEntries;
     }
-
+    
     @Override
-    public boolean isFull() 
+    public boolean isFull()
     {
         return numberOfEntries == 25;
     }
-
+    
     @Override
-    public boolean isEmpty() 
+    public boolean isEmpty()
     {
         return numberOfEntries == 0;
     }
-
+    
     @Override
-    public boolean add(T newEntry) 
+    public boolean add(T newEntry)
     {
         if (numberOfEntries < DEFAULT_CAPACITY)
         {
@@ -40,27 +39,31 @@ public class ArrayBag <T> implements BagInterface<T>
         }
         return false;
     }
-
+    
     @Override
-    public T remove() 
-    {     
-        if (numberOfEntries != 0)
-        {
-            Random ya = new Random();
-            int choosenIndexRemove = ya.nextInt(numberOfEntries);
-            T result = bag[choosenIndexRemove]; //Return value removed
-            bag[choosenIndexRemove] = null;
-            
-            for (int i = choosenIndexRemove; i < numberOfEntries; i++)
-            {
-                bag[i] = bag[i + 1];
-            }
-            numberOfEntries--;
-            return result;
-        }
-        return null;
+    public T remove()
+    {
+        T hold = bag[numberOfEntries - 1];
+        bag[numberOfEntries - 1] = null;
+        numberOfEntries--;
+        return hold;
+//        if (numberOfEntries != 0)
+//        {
+//            Random ya = new Random();
+//            int choosenIndexRemove = ya.nextInt(numberOfEntries);
+//            T result = bag[choosenIndexRemove]; //Return value removed
+//            bag[choosenIndexRemove] = null;
+//            
+//            for (int i = choosenIndexRemove; i < numberOfEntries; i++)
+//            {
+//                bag[i] = bag[i + 1];
+//            }
+//            numberOfEntries--;
+//            return result;
+//        }
+//        return null;
     }
-
+    
     @Override
     public boolean remove(T anEntry)
     {
@@ -113,7 +116,7 @@ public class ArrayBag <T> implements BagInterface<T>
     {
         for (int i = 0; i < numberOfEntries; i++)
         {
-            if (bag[i] == anEntry)
+            if (bag[i].equals(anEntry))
                 return true;
         }
         return false;

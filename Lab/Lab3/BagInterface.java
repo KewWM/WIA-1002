@@ -1,5 +1,5 @@
 
-package Lab3.Q1;
+package Lab3;
 
 /**
 An interface that describes the operations of a bag of objects.
@@ -50,4 +50,9 @@ public interface BagInterface<T>
     @return a newly allocated array of all the entries in the bag */
     public T[] toArray();
     
+    public BagInterface<T> union (BagInterface<T> anotherBag);
+    
+    public BagInterface<T> intersection (BagInterface<T> anotherBag);
+    
+    public BagInterface<T> difference(BagInterface<T> anotherBag);
 } // end BagInterface

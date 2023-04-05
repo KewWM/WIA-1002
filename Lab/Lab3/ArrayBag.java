@@ -1,36 +1,34 @@
 
-package Lab3.Q4;
+package Lab3;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Random;
 
 public class ArrayBag <T> implements BagInterface<T>
 {
-    private int DEFAULT_CAPACITY = 25;
+    private final int DEFAULT_CAPACITY = 25;
     private T[] bag = (T[]) new Object[DEFAULT_CAPACITY];
     private int numberOfEntries;
-
-@Override
+    
+    @Override
     public int getCurrentSize() 
     {
         return numberOfEntries;
     }
-
+    
     @Override
-    public boolean isFull() 
+    public boolean isFull()
     {
         return numberOfEntries == 25;
     }
-
+    
     @Override
-    public boolean isEmpty() 
+    public boolean isEmpty()
     {
         return numberOfEntries == 0;
     }
-
+    
     @Override
-    public boolean add(T newEntry) 
+    public boolean add(T newEntry)
     {
         if (numberOfEntries < DEFAULT_CAPACITY)
         {
@@ -40,27 +38,31 @@ public class ArrayBag <T> implements BagInterface<T>
         }
         return false;
     }
-
+    
     @Override
-    public T remove() 
-    {     
-        if (numberOfEntries != 0)
-        {
-            Random ya = new Random();
-            int choosenIndexRemove = ya.nextInt(numberOfEntries);
-            T result = bag[choosenIndexRemove]; //Return value removed
-            bag[choosenIndexRemove] = null;
-            
-            for (int i = choosenIndexRemove; i < numberOfEntries; i++)
-            {
-                bag[i] = bag[i + 1];
-            }
-            numberOfEntries--;
-            return result;
-        }
-        return null;
+    public T remove()
+    {
+        T hold = bag[numberOfEntries - 1];
+        bag[numberOfEntries - 1] = null;
+        numberOfEntries--;
+        return hold;
+//        if (numberOfEntries != 0)
+//        {
+//            Random ya = new Random();
+//            int choosenIndexRemove = ya.nextInt(numberOfEntries);
+//            T result = bag[choosenIndexRemove]; //Return value removed
+//            bag[choosenIndexRemove] = null;
+//            
+//            for (int i = choosenIndexRemove; i < numberOfEntries; i++)
+//            {
+//                bag[i] = bag[i + 1];
+//            }
+//            numberOfEntries--;
+//            return result;
+//        }
+//        return null;
     }
-
+    
     @Override
     public boolean remove(T anEntry)
     {
@@ -113,7 +115,7 @@ public class ArrayBag <T> implements BagInterface<T>
     {
         for (int i = 0; i < numberOfEntries; i++)
         {
-            if (bag[i] == anEntry)
+            if (bag[i].equals(anEntry))
                 return true;
         }
         return false;
@@ -206,6 +208,36 @@ public class ArrayBag <T> implements BagInterface<T>
         return newBag;
     }
     
+    //Method 2
+    public BagInterface<T> newIntersection(BagInterface<T> aBag)
+    {
+        //Declare results bag
+        BagInterface<T> intersectionBag = new ArrayBag<>();
+        //Cast aBag to ArrayBag;
+        ArrayBag<T> newABag = (ArrayBag<T>) aBag;
+        
+        for (int i = 0; i < numberOfEntries; i++)
+        {
+            if (intersectionBag.contains(bag[i]))
+            {
+                continue;
+            }
+            //Check whether the item is in both bag
+            if (newABag.contains(bag[i]))
+            {
+                //Get the minimum of the frequency of the items in both bag
+                int count = Math.min(getFrequencyOf(bag[i]), newABag.getFrequencyOf(bag[i]));
+                //Use a for loop to add the target count into the result bag
+                for(int j = 0; j < count; j++)
+                {
+                    intersectionBag.add(bag[i]);
+                }
+            }
+        }
+        
+        return intersectionBag;
+    }
+    
      /** Removes entries in the second bag from the first bag.
      * NOTE: The entries that are in the second bag but
      *       not in the first bag will simply be disregarded.
@@ -242,54 +274,5 @@ public class ArrayBag <T> implements BagInterface<T>
         }
         return newBag;
     } // end of "difference"
-    
-    public static void main(String[] args) 
-    {
-        ArrayBag<String> bag1 = new ArrayBag();
-        ArrayBag<String> bag2 = new ArrayBag();
-        bag1.add("a");
-        bag1.add("b");
-        bag1.add("c");
-        bag2.add("b");
-        bag2.add("c");
-        bag2.add("d");
-        bag2.add("e");
-        BagInterface<String> everything = bag1.union(bag2);
-        
-        //test BagInterface<T> union (BagInterface<T> anotherBag)
-        Object[] output = everything.toArray();
-        String[] dest = new String[output.length];
-        System.arraycopy(output, 0, dest, 0, output.length);
-        
-        Arrays.sort(dest);
-        System.out.println("Union for both arrays: " + Arrays.toString(dest));
-        
-        //test BagInterface<T> intersection(BagInterface<T> anotherBag)
-        BagInterface<String> commonItems = bag1.intersection(bag2);
-        
-        Object[] src1 = commonItems.toArray();
-        String[] dest1 = new String[src1.length];
-        System.arraycopy(src1, 0, dest1, 0, src1.length);
 
-        Arrays.sort(dest1);
-        System.out.println("Intersection for both arrays: " + Arrays.toString(dest1));
-        
-        //test BagInterface<T> difference(BagInterface<T> anotherBag)
-        bag1.remove("b");
-        BagInterface leftOver1 = bag1.difference(bag2);
-        BagInterface leftOver2 = bag2.difference(bag1);
-        
-        Object[] src2 = leftOver1.toArray();
-        String[] dest2 = new String[src2.length];
-        System.arraycopy(src2, 0, dest2, 0, src2.length);
-        
-        Object[] src3 = leftOver2.toArray();
-        String[] dest3 = new String[src3.length];
-        System.arraycopy(src3, 0, dest3, 0, src3.length);
-        
-        Arrays.sort(dest2);
-        Arrays.sort(dest3);
-        System.out.println("Difference for first compared to second: " + Arrays.toString(dest2));
-        System.out.println("Difference for second compared to first: " + Arrays.toString(dest3));
-    }
 }

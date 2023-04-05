@@ -4,8 +4,11 @@ Instance variable(s):
 - itemCount: number of item in dipenser
 - itemPrice: item price
 Method(s):
-- dispense(itemCount): dispenses an argument number of item and return itemPrice * itemCount
-- refill(itemCount): adds an arguement number of item into machine
+- getCount(): retrieve number of items in the dispenser
+- getProductCost(): retrieve the cost of item
+- makeSale(): reduce the number of items in the dispenser by 1
+- setCost(): set the cost of the product
+- setNumberOfItems(): set the number of items in the dispenser
 UML class diagram:
 ┌─────────────────────────────────────┐
 │              Dispenser              │
@@ -14,8 +17,11 @@ UML class diagram:
 │ - itemCount: int                    │
 │ - itemPrice: double                 │
 ├─────────────────────────────────────┤
-│ + dispense(itemCount: int): double  │
-│ + refill(itemCount: int): void      │
+│ + getCount(): int                   │
+│ + getProductCost(): double          |
+| + makeSale(): int                   │
+| + setCost(): void                   |
+| + setNumberOfItems(): void          |
 └─────────────────────────────────────┘
 
 Cash Register
@@ -24,14 +30,18 @@ Instance variable(s):
 Method(s):
 - cashPaid(): accepts cash into machine and add to cashBal
 - returnChange(totalPrice): returns change to user and deducts the balance by totalPrice in machine.
+- getCashOnHand(): retrieve the amount in the cash register
+- setCashOnHand(): set the amount in the cash register
 UML class diagram:
 ┌──────────────────────────────────────────┐
 │               CashRegister               │
 ├──────────────────────────────────────────┤
-│ - cashBalance: double                    │
+│ - cashBal: double                        │
 ├──────────────────────────────────────────┤
 │ + cashPaid(): void                       │
 │ + returnChange(totalPrice: double): void │
+| + getCashOnHand(): double                |
+| + setCashOnHand(): void                  |
 └──────────────────────────────────────────┘
 
 Candy Machine
@@ -42,10 +52,8 @@ Instance variable(s):
 - dispCookies: Dispenser object for "cookies"
 - cashRegister: Cash Register object
 Method(s):
-- displayItem(): displays items sold by candy machine
-- selectedItem(): returns Dispenser object based on selected item
-- payment(itemCount): calls the cashPaid() method of the Dispenser object based on the item selected and calls the returnChange() method.
-- dispenseItem(itemCount): calls the dispense() method of the Dispenser object based on the item selected.
+- showSelection(): show the number of products sold by the candy machine
+- makeSelection(): allow the customer to select the product
 UML class diagram:
 ┌──────────────────────────────────────┐
 │             CandyMachine             │
@@ -56,8 +64,18 @@ UML class diagram:
 │ - dispCookies: Dispenser             │
 │ - cashRegister: CashRegister         │
 ├──────────────────────────────────────┤
-│ + displayItem(): void                │
-│ + selectedItem(): Dispenser          │
-│ + payment(itemCount: int): void      │
-│ + dispenseItem(itemCount: int): void │
+│ + showSelection() void               │
+│ + makeSelection(): void              │
 └──────────────────────────────────────┘
+
+┌──────────────────────────────────────┐
+│             CandyMachine             │
+├──────────────────────────────────────|
+    A                               A
+    |                               |
+    |                               |
+    |                               |
+    |                               |
+┌──────────────┐            ┌────────────┐
+│ CashRegister │            │  Dispenser │
+├──────────────┤            ├────────────┤
