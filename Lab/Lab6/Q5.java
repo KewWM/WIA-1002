@@ -14,18 +14,51 @@ public class Q5
         int numDisk = ya.nextInt();
         
         //Begin: All disk(s) are here
-        MyStack<Integer> A = new MyStack<>();
+        MyStack<Integer> source = new MyStack<>();
         //Blank
-        MyStack<Integer> B = new MyStack<>();
+        MyStack<Integer> aux = new MyStack<>();
         //Final: All disk(s) should be here
-        MyStack<Integer> C = new MyStack<>();
+        MyStack<Integer> dest = new MyStack<>();
         
         //Start by having all disk
-        for (int i = numDisk; i > 0; i++)
+        for (int i = numDisk; i > 0; i--)
         {
-            A.push(i);
+            source.push(i);
         }
         
-        System.out.println("oi");
+
+        // Display Initial
+        System.out.println("\nInitial:\n__________________");
+        System.out.printf("Rod 1: %s\n", source.toString());
+        System.out.printf("Rod 2: %s\n", aux.toString());
+        System.out.printf("Rod 3: %s\n", dest.toString());
+
+        // Start Recursion
+        start(numDisk, source, dest, aux);
+
+        // Display Final
+        System.out.println("\nFinal:\n__________________");
+        System.out.printf("Rod 1: %s\n", source.toString());
+        System.out.printf("Rod 2: %s\n", aux.toString());
+        System.out.printf("Rod 3: %s\n", dest.toString());
+    }
+
+    // Recursion
+    public static void start(int startDiscsLeft, MyStack<Integer> start, MyStack<Integer> target, MyStack<Integer> helper) 
+    {
+
+        // Base Case
+        if (startDiscsLeft == 1) 
+        {
+            target.push(start.pop());
+            return;
+        }
+
+        // Move
+        start(startDiscsLeft - 1, start, helper, target);
+        target.push(start.pop());
+        
+        // Reset
+        start(startDiscsLeft - 1, helper, target, start);
     }
 }
