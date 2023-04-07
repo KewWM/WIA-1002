@@ -1,0 +1,44 @@
+X.enqueue(new Integer(14));
+X.enqueue(new Integer(3));
+X.enqueue(new Integer(5));
+
+Object Y = X.dequeue();
+
+X.enqueue(new Integer(7));
+X.enqueue(new Integer(9));
+
+Y = X.dequeue();
+
+X.enqueue(new Integer(2));
+X.enqueue(new Integer(4));
+
+
+Given the resulting queue X above, what would be the result of each of the following?
+
+Output:
+X = 5, 7, 9, 2, 4
+Y = 14, 3
+
+a) X.front();
+Ans: 5
+
+b) Y = X.dequeue();
+   X.enqueue(new Integer(10));
+   X.front();
+
+Output:
+X = 7, 9, 2, 4, 10
+Y = 14, 3, 5
+
+Ans: 7
+
+c) Y = X.dequeue();
+
+Output:
+X = 9, 2, 4, 10
+Y = 14, 3, 5, 7
+
+Ans: Y = 7
+
+d) X.front();
+Ans: 9
