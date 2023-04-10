@@ -1,0 +1,5 @@
+Describe the main difference between Queue and PriorityQueue.
+
+Ans:
+A Queue is a simple data structure that follows the FIFO principle, 
+while a PriorityQueue adds the concept of priority to the mix, allowing for more complex ordering of elements.

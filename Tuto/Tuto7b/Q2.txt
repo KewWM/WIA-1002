@@ -1,0 +1,6 @@
+Briefly provide THREE (3) real-life example in using PriorityQueue.
+
+Ans:
+1. Emergency surgery
+2. Job/Work scheduling
+3. Traffic management
