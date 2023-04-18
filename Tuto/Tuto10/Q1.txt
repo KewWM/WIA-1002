@@ -1,0 +1,29 @@
+Compare between linear search and binary search algorithms 
+by searching for the numbers 45 and 54 in the following list :
+
+                    3  8  12  34  54  85  61  110
+
+For number 45:
+
+Linear Search: 
+Linear search algorithm will iterate from index 0 until last index and return -1 
+because up until the last index 45 is not found. Number of iterations is 8.
+
+Binary Search:
+Binary search algorithm will take the middle element 54 as pivot point and
+found that it is larger than 45, so the high will be set to element 34 and 
+the mid will be set to 8, then because the mid is less than 45 so the low will be set to 12 and 
+the mid will also be 12, then the high will become smaller than low and the search returns -1 as element is not found. 
+Number of iterations is 3.
+
+
+For number 54:
+
+Linear Search:
+Linear search algorithm will iterate from index 0 until index 4 and return 54.
+Number of iterations is 5.
+
+Binary Search:
+Binary search algorithm for this case will take the middle element 54 as a pivot point and 
+immediately return the middle index because this element is exactly the element to be searched. 
+Number of iteration is 1.
