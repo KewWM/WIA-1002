@@ -23,6 +23,11 @@ public class Q1
         System.out.println("Contains Cherry? " + fruitQ.contains("Cherry"));
         System.out.println("Contains Durian? " + fruitQ.contains("Durian"));
         
-        System.out.println(fruitQ.isEmpty());
+        System.out.println("Empty? " + fruitQ.isEmpty());
+        while (!fruitQ.isEmpty())
+        {
+            System.out.println("Dequeue: " + fruitQ.dequeue());
+        }
+        System.out.println("Empty? " + fruitQ.isEmpty());
     }
 }

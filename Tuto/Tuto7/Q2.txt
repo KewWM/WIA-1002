@@ -1,4 +1,4 @@
 What is the difference between a queue and stack?
 
 Ans:
-Queue is first in first out (FIFO) ordering wherease stack is first in last out (FILO)
+Queue is first in first out (FIFO) ordering wherease stack is \ast in first out (LIFO)

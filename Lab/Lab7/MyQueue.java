@@ -1,4 +1,4 @@
-
+    
 package Lab7;
 
 import java.util.Arrays;
@@ -11,6 +11,12 @@ public class MyQueue <E>
     public MyQueue(E[] e) 
     {
         list = new LinkedList<>(Arrays.asList(e));
+        /*
+        for (int i = 0; i < e.length; i++)
+        {
+            enqueue();
+        }
+        */
     }
     
     public MyQueue() 

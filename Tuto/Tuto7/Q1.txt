@@ -2,3 +2,4 @@
 2. Line up to pass toll
 3. Broading on bus
 4. Queue up to pay for food
+5. Printing

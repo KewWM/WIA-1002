@@ -19,7 +19,7 @@ Ans: 1 4 5 2 3
 (b) Is it possible to have output: 1 3 5 4 2? If yes, give an input sequence that produces the output; 
     or else, provide justification to your answer.
 Ans: 
-Impossible.
+Impossible. If 1 3 5 2 4, it will work. @
 The code above can only produce two sub-lists of increasing values, 
 where the first sub-list is generated with true input and the second sub-list is dequeued for false input, 
 but for 1 3 5 4 2 there are 3 sub-lists of increasing value, i.e. 1 3 5, 4 and 2.
@@ -29,3 +29,4 @@ Ans:
 true true true true true 
 false false false false false 
 true true true true false 
+true false false false false

@@ -51,9 +51,9 @@ public class Q2
     
     public static void main(String[] args) 
     {
-        System.out.println(isPalindrome("oklah"));
-        System.out.println(isPalindrome("wtatw"));
-        System.out.println(isPalindrome("oi"));
-        System.out.println(isPalindrome("a"));
+        System.out.println("oklah: " + isPalindrome("oklah"));
+        System.out.println("wtatw: " + isPalindrome("wtatw"));
+        System.out.println("oi: " + isPalindrome("oi"));
+        System.out.println("a: " + isPalindrome("a"));
     }
 }
