@@ -36,11 +36,14 @@ public class PriorityQueueComparator implements Comparator<String>
 
 /*
 a) What is the purpose of the PriorityQueueComparator in the code?
+
 Ans:
 To define a custom ordering method for the elements of the PriorityQueue.
-In this code specifically, it is used to compare two strings based on their length.
+It is used to compare two strings based on their length,
+return false if s1 is shorter than s2, return true id s1 is longer than 2.
 
 b) What is the output for the code?
+
 Ans:
 Ali
 Jason

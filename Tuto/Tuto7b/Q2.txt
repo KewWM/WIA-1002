@@ -4,3 +4,5 @@ Ans:
 1. Emergency surgery
 2. Job/Work scheduling
 3. Traffic management
+4. Airport broading
+5. Emergency department in hospital

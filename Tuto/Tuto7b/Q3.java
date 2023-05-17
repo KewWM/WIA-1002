@@ -51,26 +51,26 @@ peek() gives us: C++
 b)
 The queue elements:
 C++
-Python
-Java
 Fortran
+Java
+Python
 
 c)
 After poll():
-Python
-Java
 Fortran
+Java
+Python
 
 d)
 After remove():
-Python
 Fortran
+Python
 
 e)
 Priority queue contains Ruby or not?: false
 
 f)
 Value in array: 
-Value: Python
 Value: Fortran
+Value: Python
 */
