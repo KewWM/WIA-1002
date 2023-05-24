@@ -10,9 +10,11 @@ public class Q2
     {
         PriorityQueue<String> pQ1 = new PriorityQueue<>
         (Arrays.asList("George", "Jim", "John", "Blake", "Kevin", "Michael"));
+        System.out.println("Queue1: " + Arrays.toString(pQ1.toArray()));
         
         PriorityQueue<String> pQ2 = new PriorityQueue<>
         (Arrays.asList("George", "Katie", "Kevin", "Michelle", "Ryan"));
+        System.out.println("Queue2: " + Arrays.toString(pQ2.toArray()));
         
         //Union = all together
         PriorityQueue<String> union = new PriorityQueue<>(pQ1);

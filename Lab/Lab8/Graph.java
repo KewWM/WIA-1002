@@ -40,6 +40,8 @@ public class Graph <T extends Comparable<T>, N extends Comparable<N>> extends We
         }
         return false;
     }
+    
+    //super.addEdge(source, destination, 1)
 
     public boolean addUndirectedEdge(T source, T destination)
     {

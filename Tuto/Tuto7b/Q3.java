@@ -58,8 +58,8 @@ Python
 c)
 After poll():
 Fortran
-Java
 Python
+Java
 
 d)
 After remove():

@@ -20,6 +20,10 @@ public class TestLinkedList
         System.out.println("Size: " + list.getSize());
         System.out.println("First value: " + list.getFirst() + "\nLast value: " + list.getLast());
         System.out.println(list.remove(2) + " is removed!");
+        
+        System.out.print("Element: ");
+        list.print();
+        
         System.out.println("Index location of second value: " + list.indexOf('b'));
         System.out.println("Index location of third value: " + list.indexOf('c'));
         System.out.println("List contain 'c'? " + list.contains('c'));

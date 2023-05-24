@@ -9,7 +9,7 @@ public class MyLinkedList <E>
 
     public MyLinkedList() 
     {
-        head = null;
+        head = null;    
         tail = null;
     }
     
@@ -39,8 +39,8 @@ public class MyLinkedList <E>
     }
     
     public void add (int index, E e)
-    {
-        if (index == 0) 
+    { 
+        if (index == 0 || head == null) 
         {
             addFirst(e);
         }
@@ -144,7 +144,7 @@ public class MyLinkedList <E>
         {
             Node<E> previous = head;
 
-            for (int i = 1; i < index; i++)
+            for (int i = 0; i < index; i++)
             {
                 previous = previous.next;
             }
@@ -173,12 +173,19 @@ public class MyLinkedList <E>
     
     public E get(int index)
     {
-        Node<E> current = head;
-        for (int i = 0; i < index; i++) 
+        if (index == 0)
+            return getFirst();
+        else if (index == size - 1)
+            return getLast();
+        else
         {
-            current = current.next;
+            Node<E> current = head;
+            for (int i = 0; i < index; i++) 
+            {
+                current = current.next;
+            }
+            return current.element;
         }
-        return current.element;
     }
     
     public E getFirst()
@@ -209,13 +216,10 @@ public class MyLinkedList <E>
     {
         int lastIndex = -1;
         Node<E> current = head;
-        for (int i = 0; i < size; i++) 
+        for (int i = 0; i < size; i++, current = current.next) 
         {
             if (current.element == e) 
-            {
                 lastIndex = i;
-            }
-            current = current.next;
         }
 
         return lastIndex;
@@ -231,6 +235,10 @@ public class MyLinkedList <E>
     {
         while (size != 0)
             removeFirst();
+        /*Garbage Collector
+        head = tail = null;
+        size = 0;
+        */
     }
     
     public void print()
@@ -245,6 +253,11 @@ public class MyLinkedList <E>
         System.out.println(str);
     }
     
+//    public void reverse()
+//    {
+//
+//    }
+    
     public void reverse()
     {
         Node<E> current = head;
@@ -256,7 +269,7 @@ public class MyLinkedList <E>
             current = current.next;
         }
 
-        for (int i = size - 1; i > -1; i--) 
+        for (int i = size - 1; i >= 0; i--) 
         {
             str += arr[i] + " ";
         }

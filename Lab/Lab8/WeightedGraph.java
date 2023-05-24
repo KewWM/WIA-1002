@@ -306,6 +306,10 @@ class WeightedGraph<T extends Comparable<T>, N extends Comparable<N>>
     
     public boolean addUndirectedEdge(T source, T destination, N w)
     {
+//        boolean a, b;
+//        a = addEdge(source, destination, w);
+//        b = addEdge(source, destination, w);
+//        return (a && b);
         if (this.addEdge(source, destination, w))
             return this.addEdge(destination, source, w);
         return false;
@@ -313,29 +317,48 @@ class WeightedGraph<T extends Comparable<T>, N extends Comparable<N>>
     
     public boolean removeEdge(T source, T destination)
     {
+        // Check whether the graph is empty
+        // head == null (no vertex inside the graph)
         if (head == null)
             return false;
+        // Check whether the source vertex and the destination vertex exists
+        // inside the graph
         if (!(hasVertex(source) && hasVertex(destination))) 
             return false;
-        Vertex<T, N> sourceVertex = head;
-        while (sourceVertex != null) 
+        // Start searching from the head
+        Vertex<T, N> currVertex = head;
+        // The vertexes are stored as a linkedlist in the graph
+        while (currVertex != null) 
         {
-            if (sourceVertex.vertexInfo.compareTo(source) == 0) 
+            // Check whether the currVertex is equal to the provided source
+            if (currVertex.vertexInfo.compareTo(source) == 0) 
             {
                 // Reached source vertex, look for destination now
-                Edge<T, N> currentEdge = sourceVertex.firstEdge;
-                while (currentEdge != null)
+                // Look for destination by going through each of the edges
+                Edge<T, N> currentEdge = currVertex.firstEdge;
+                //TODO Check whether the first edge go to the target destination
+                if (currentEdge.toVertex.vertexInfo.compareTo(destination) == 0) 
                 {
                     // destination vertex found
+                    // Set the curr next edge to the curr next next edge
+                    currentEdge.nextEdge = currentEdge.nextEdge.nextEdge;
+                    return true;
+                }
+                while (currentEdge != null)
+                {
                     if (currentEdge.nextEdge.toVertex.vertexInfo.compareTo(destination) == 0) 
                     {
+                        // destination vertex found
+                        // Set the curr next edge to the curr next next edge
                         currentEdge.nextEdge = currentEdge.nextEdge.nextEdge;
                         return true;
                     }
                     currentEdge = currentEdge.nextEdge;
+                    currVertex.outdeg--;
+                    currVertex.indeg--;
                 }
             }
-            sourceVertex = sourceVertex.nextVertex;
+            currVertex = currVertex.nextVertex;
         }
         return false;
     }

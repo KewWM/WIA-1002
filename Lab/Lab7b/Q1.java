@@ -44,5 +44,6 @@ public class Q1
         System.out.print("Sort the priority queue in reversing order: ");
         while (pQ2.size() > 0)
             System.out.print(pQ2.poll() + " ");
+        System.out.println("");
     }
 }

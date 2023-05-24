@@ -12,6 +12,7 @@ a) The name is removeLast()
 b)
 public E removeLast() 
 {
+    Node<E> pointer 1 = head;
     if (size == 0) 
         return null;
     else if (size == 1) 
@@ -37,4 +38,13 @@ public E removeLast()
         return temp.element;
     }
 }
+
+public E removeLast() 
+{
+    Node<E> pointer 1 = head;
+
+    for (int  i = 0; i < size - 2; size++)
+    {
+        pointer1 = pointer1.next;
+        
 */
