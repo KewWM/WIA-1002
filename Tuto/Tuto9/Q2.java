@@ -5,7 +5,7 @@ public class Q2
 {
     public static void main(String[] args) 
     {
-        //System.out.println(f());
+//        System.out.println(f());
     }
     
     public static int f(int n) 
@@ -20,5 +20,6 @@ public class Q2
 /*
 Explain the problem that occurs when executing the recursive method f().
 Ans:
-The program occurs compile-time error. This error happens because the method f() requires a parameter n
+When the argument passed in to the method is non-negative(n > -1), thestopping condition (n == 0)
+will never be reached. f() becomes an infinite recursive method.
 */

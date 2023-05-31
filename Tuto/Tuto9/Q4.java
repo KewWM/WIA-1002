@@ -13,7 +13,7 @@ public class Q4
 {
     public static void main(String[] args) 
     {
-        System.out.println("Total: " + sum(5));
+        System.out.println("5 + 4 + 3 + 2 + 1\nTotal: " + sum(5));
     }
     
     public static int sum(int N)

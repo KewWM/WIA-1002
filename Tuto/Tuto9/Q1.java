@@ -20,5 +20,5 @@ public class Q1
 /*
 Explain the problem that occurs when executing the recursive method f(0).
 Ans:
-The method runs infinitely and causes a StackOverflowError.
+The method runs infinitely and causes a StackOverflowError since there is no base case (n == 0) that stop the recursion.
 */
