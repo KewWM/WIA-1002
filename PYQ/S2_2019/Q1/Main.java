@@ -1,8 +1,10 @@
 package S2_2019.Q1;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         MyLinkedList<Integer> list1 = new MyLinkedList<>();
         MyLinkedList<Integer> list2 = new MyLinkedList<>();
         MyLinkedList<Integer> newList = new MyLinkedList<>();
